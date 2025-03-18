@@ -1,0 +1,188 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* styles for the landing page*/
+body{
+    background-color: rgb(237, 231, 219);
+}
+.full-container{
+   display: flex;
+   margin-left: 5%;
+   margin-top: 100px;
+   gap: 25px;
+    background-color: rgb(245, 238, 227); 
+    border-radius: 20px;
+    height: 500px;
+    width: 90%;
+ 
+   
+}
+.full-container img{
+    height: 500px;
+    width: 400px;
+    border-radius: 10px;
+}
+.header{
+    font-size: 45px;
+    text-align: center;
+    padding: 10px;
+    display: flex;
+    gap: 8px;
+    margin-top: 25px;
+}
+.header span{
+    padding-left: 10px;
+    display: inline-block;
+    transform: translateY(-100%);
+    opacity: 0;
+    animation: rollInFromSide 0.6s forwards;
+    animation-timing-function: cubic-bezier(0.68, -0.55, 0.265,1.55);
+}
+@keyframes rollInFromSide{
+ 0%{
+    transform: translateY(-100%) rotate(-360deg);
+    opacity: 0;
+    color: red;
+ }
+ 25%{
+    transform: translateY(-100%) rotate(-360deg);
+    opacity: 0;
+    color: blue;
+ }
+ 50%{
+    color: orange;
+ }
+ 75%{
+    color: green;
+ }
+ 100%{
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+    color:rgb(242, 168, 168);
+   
+ }
+
+}
+.header span:nth-child(1){
+    animation-delay: 0s;
+}
+.header span:nth-child(2){
+    animation-delay: 0.2s;
+    color: blue;
+}
+.header span:nth-child(3){
+    animation-delay: 0.4s;
+}
+.header span:nth-child(4){
+    animation-delay: 0.6s;
+}
+.header span:nth-child(5){
+    animation-delay: 0.8s;
+}
+.header span:nth-child(6){
+    animation-delay: 1.2s;
+}
+.header span:nth-child(7){
+    animation-delay: 1.4s;
+}
+.header span:nth-child(8){
+    animation-delay: 1.6s;
+}
+.header span:nth-child(9){
+    animation-delay: 1.8s;
+}
+.header span:nth-child(10){
+    animation-delay: 2.0s;
+}
+p{
+    padding: 20px;
+    font-size: 23px;
+    line-height: 35px;
+    font-family: sans-serif,Arial, Helvetica, sans-serif;
+    
+
+    animation: slideIn 2s ease-in-out;
+}
+@keyframes slideIn {
+    0%{
+        transform: translateX(-100);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+opacity: 1;
+    }
+}
+.full-container button{
+    
+    margin-left: 35%;
+    width: 130px;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 20px;
+    border-style: none;
+    background-color:rgb(225, 87, 87);
+}
+.greetings img{
+    height: 200px;
+}
+
+/* styles for questions page */
+
+.question-container{
+    border: 1px solid;
+    height: 500px;
+    width: 50%;
+    margin-left: 22%;
+    margin-top: 10%;
+    border-color: white;
+    border-radius: 10px;
+    background-color: white;
+    transition: transform 0.3s ease;
+}
+.question-container:hover{
+    transform: translateY(10px);
+}
+.question{
+    border: 1px solid;
+    width: 85%;
+    margin-left: 7.5%;
+    margin-top: 60px;
+    background-color: rgb(247, 220, 220);
+    border-color:rgb(246, 216, 216) ;
+    border-radius: 10px;
+   
+}
+.question p{
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+.container-Answers{
+    margin-top: 60px;
+    margin-left: 45px;
+}
+.container-Answers button{
+    display:block;
+   margin-top: 20px;
+   width: 90%;
+   height: 28px;
+   text-align: left;
+   padding-left: 8px;
+   border-radius: 10px;
+   border-style: none;
+   background-color:rgb(240, 204, 204) ;
+   font-weight: bolder;
+}
+.button-next button{
+    margin-top: 80px;
+    margin-left: 77%;
+    width: 70px;
+    height: 30px;
+    border-radius: 5px;
+    border-style: none;
+    font-size: 18px;
+    background-color: rgb(240, 204, 204) ;
+}
