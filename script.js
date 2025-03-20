@@ -1,40 +1,69 @@
-const Answers = [
+const quizData = [
     {
         question : "What is the solution to the equation 2x+4 = 6",
-        Option: ["10","1","5"],
+        Options: ["10","1","5"],
         Answer: 1
     },
     {
      question:"How many sides does a traingle have",
-     Option: ["2","5","3"],
+     Options: ["2","5","3"],
      Answer: 2
 
     },
     {
         question:"what is the area of a rectangle with length 6 and width 4",
-        Option: ["24","20","30"],
+        Options: ["24","20","30"],
         Answer:0
     }
 ]
+
+
+
 let currentQuestionIndex = 0;
+let selectedOption = null;
 
-function loadQuestion() {
-    const question = Answers[currentQuestionIndex];
-    document.getElementById('question').innerText = question.question;
+function loadQuestion(){
+ 
+    const questionData = quizData[currentQuestionIndex];
+    const questionElement = document.getElementById("question");
+    const answersContainer = document.getElementById("Answers");
 
-    const answerButtons = document.querySelectorAll('.answer');
-    answerButtons.forEach((button, index) => {
-        button.innerText = question.Option[index];
-    });
-}
-function nextQuestion() {
+    questionElement.textContent = questionData.question;
+    answersContainer.innerHTML = ""
 
-    currentQuestionIndex++;
+questionData.Options.forEach(option =>{
+    const btn = document.createElement("button");
+    btn.textContent = option;
+    btn.classList.add("option-btn");
 
-    if (currentQuestionIndex >= questions.length) {
-        alert("You've completed the quiz!");
-        currentQuestionIndex = 0; 
+    btn.onclick = function(){
+        selectOption(btn)
     }
+    answersContainer.appendChild(btn)
 
-    loadQuestion(); 
+})
+   
 }
+function moveQuestion(){
+    if(currentQuestionIndex<quizData.length-1){
+        currentQuestionIndex++;
+        selectedOption = "null";
+        loadQuestion()
+    }
+    else{
+        alert("You Have Completed The Quiz")
+    }
+}
+function selectOption(btn){
+const buttons = document.querySelectorAll("#answers button");
+buttons.forEach(button => {
+    button.style.backgroundColor = ""
+})
+btn.style.backgroundColor = "red"
+
+}
+
+next.addEventListener("click",moveQuestion)
+    
+loadQuestion()
+
